@@ -1,0 +1,32 @@
+<div class="login" ng-controller="loginController">
+        <div class="login-form">
+            <h3> Login </h3>
+              <!-- The form tag is a power wrapper inside which we write our input tags
+                 The form tag has some attributes that we can use to send information to the server, without writing any JavaScript! -->
+            <form name="loginForm">   <!-- The action attribute is where we write the URL of the API endpoint where we'll be sending this information
+                And in the method attribute we write how we want to send that information, for example here we want to perform a POST request to send data to the server-->
+               <div class="form-group">
+                    <label for="user-email">Email address</label>  <!-- link the label tag with some input tag using the 'for' attribute
+                                        Inside the 'for' attribute, we write the 'id' of the input we want to link with our label tag -->
+                    <input type="email" class="form-control" id="user-email" placeholder="Email" name="email" required="" ng-model="user.email">  <!-- We can give name attribute to the form tag as well as each input tag --><!-- required means maindatory field -->
+                       <!-- With the ng-model directive you can bind the value of an input field to a variable created in AngularJS. -->
+                    <div ng-show="loginForm.email.$error.required">Required!</div>  <!-- it shows required to fill --><!-- $error an object that angular adds to our input if there is any 'error' 2. The $error object has various properties. Here we are using $error.email and $error.required -->
+                    <div ng-show="loginForm.email.$error.email">This doesn't look like a valid email</div>
+               </div>
+               <div class="form-group">
+                   <label for="user-password">Password</label>
+                    <input type="password" class="form-control" id="user-password" placeholder="Password" name="password" required="" ng-model="user.password" ng-minlength="6" ng-maxlength="15">
+                    <div ng-show="loginForm.password.$error.minlength">
+                    Password must be at least 6 characters long
+                    </div>
+                    <div ng-show="loginForm.password.$error.maxlength">
+                    Password must be at most 15 characters long
+                    </div>
+                    <div ng-show="loginForm.password.$error.required">
+                    Please enter your super secret ninja password
+                    </div>
+               </div>
+               <button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid" ng-click="goToHome()">Login</button>  <!-- disable the login button till they type the correct email and password -->
+            </form>
+        </div>
+    </div>
