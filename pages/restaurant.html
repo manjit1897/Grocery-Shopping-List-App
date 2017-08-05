@@ -1,7 +1,7 @@
 <div>Restaurant Info goes here</div>
 <h1>Show Restaurant {{restaurantId}} details here</h1>
 
-<div class="restaurant" ng-if="restaurant.name">  /*if the restaurant has a name, only then the element is shown. Otherwise it is hidden*/
+<div class="restaurant" ng-if="restaurant.name">
     <div class="rest-wrapper">
         <div class="image">
             <img ng-src="{{restaurant.image}}" height="100" width="100">
@@ -26,14 +26,34 @@
             <div><small>Cuisines:</small></div>
             <div><small>Cost for Two: </small></div>
             <div><small>Hours:</small></div>
+            <div ng-if="restaurant.bestDish"><small>Recommended: </small></div>
         </div>
         <div class="value">
             <div>{{restaurant.cuisines}}</div>
             <div>₹{{restaurant.cost | number}}</div>
             <div>{{restaurant.hours}}</div>
+            <div class="bestDish" ng-if="restaurant.bestDish">
+	             <span>{{restaurant.bestDish.name}} </span>
+	             <div ng-click="getIngredients(restaurant.bestDish.image)" class="button">Get Ingredients</div>
+		        </div>
         </div>
     </div>
     <div class="rating">
         <strong>{{restaurant.vote}}</strong>
+    </div>
+    <div ng-if="ingredients">
+      <div ng-if="restaurant.bestDish"><center><strong>GROCERY SHOP LIST</strong></center></div>
+      <ol>
+        <li ng-repeat="ingredient in ingredients" style="list-style-type:none">
+          <input type="checkbox"  >
+          {{ingredient}}
+          <span ng-click="removeItem($index)" style="cursor:pointer; float:right">×</span>
+        </li>
+      </ol>
+    </div>
+    <!-- <div class="grocery_list_button">
+      <button style="float :right; background-color :red ; color:white" ng-click="goToGroceryList()"> Grocery List </button>
+      </div>
+     -->
     </div>
 </div>
