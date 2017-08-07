@@ -50,6 +50,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 vote: '4.2',
 	 cuisines: 'Modern Indian',
 	 cost: '2200',
+	 id: '1',
 	 hours: '12 Noon to 1 AM (Mon-Sun)',
 	 image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg'
 },
@@ -61,6 +62,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 		 vote: '3.4',
 		 cuisines: 'Modern Indian',
 		 cost: '700',
+		 id: '2',
 		 hours: ' 7 PM to 4 AM (Mon-Sun)',
 		 image: 'https://b.zmtcdn.com/data/pictures/chains/7/18366927/0d9a66ae0621be1ce7ed76c127108f4c.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
 	 },
@@ -72,6 +74,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 vote: '3.4',
 	 cuisines: 'Ice Cream, Desserts',
 	 cost: '2200',
+	 id: '3',
 	 hours: '11 AM to 11 PM (Mon-Sun)',
 	 image: 'https://b.zmtcdn.com/data/pictures/chains/0/120020/c3986c88bfd52bcda9c224f7806a4c9f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 	 },
@@ -83,6 +86,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 		 vote: '4.2',
 		 cuisines: 'North Indian, Chinese, Continental, Italian, Burger, Rolls, Salad',
 		 cost: '2200',
+		 id: '4',
 		 hours: ' 7 PM to 4 AM (Mon-Sun)',
 		 image: 'https://b.zmtcdn.com/data/pictures/chains/4/122064/4ac36c34c219e976491b3fc2b10cd7e8.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
 	 },
@@ -94,6 +98,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 vote: '4.2',
 	 cuisines: 'Rajasthani',
 	 cost: '2000',
+	 id: '5',
 	 hours: ' 5:30 PM to 11 PM (Mon-Sun)',
 	 image: 'https://b.zmtcdn.com/data/reviews_photos/31b/7a8d83e736afc793ead8b7695c67931b_1484535893.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 	 }]
@@ -184,7 +189,7 @@ bestDish: {
 name: 'Rajasthani Thali',
 image: 'https://b.zmtcdn.com/data/reviews_photos/dc4/fe3f2f52e7c4b315151c375e07bfedc4_1476118137.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 				 },
-image: 'https://b.zmtcdn.com/data/reviews_photos/31b/7a8d83e736afc793ead8b7695c67931b_1484535893.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+image: 'https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952__340.jpg'
 }]
 
 $scope.restaurant = restaurants[$routeParams.id - 1];
