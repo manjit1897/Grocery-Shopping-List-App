@@ -52,7 +52,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 cost: '2200',
 	 id: '1',
 	 hours: '12 Noon to 1 AM (Mon-Sun)',
-	 image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg'
+	 image: 'https://cdn.pixabay.com/photo/2015/04/10/00/41/food-715542__340.jpg'
 },
 	 {
 		 name: 'Food Night Riders',
@@ -64,7 +64,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 		 cost: '700',
 		 id: '2',
 		 hours: ' 7 PM to 4 AM (Mon-Sun)',
-		 image: 'https://b.zmtcdn.com/data/pictures/chains/7/18366927/0d9a66ae0621be1ce7ed76c127108f4c.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
+		 image: 'https://cdn.pixabay.com/photo/2016/03/05/19/58/appetite-1238569__340.jpg'
 	 },
 	 {
 	 name: 'Baskin Robbins',
@@ -76,7 +76,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 cost: '2200',
 	 id: '3',
 	 hours: '11 AM to 11 PM (Mon-Sun)',
-	 image: 'https://b.zmtcdn.com/data/pictures/chains/0/120020/c3986c88bfd52bcda9c224f7806a4c9f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+	 image: 'https://cdn.pixabay.com/photo/2017/03/03/19/28/eat-2114779__340.jpg'
 	 },
 	 {
 		 name: 'Midnight Chef',
@@ -88,7 +88,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 		 cost: '2200',
 		 id: '4',
 		 hours: ' 7 PM to 4 AM (Mon-Sun)',
-		 image: 'https://b.zmtcdn.com/data/pictures/chains/4/122064/4ac36c34c219e976491b3fc2b10cd7e8.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
+		 image: 'https://cdn.pixabay.com/photo/2016/11/18/22/21/architecture-1837150__340.jpg'
 	 },
 	 {
 	 name: 'Chokhi Dhani',
@@ -100,7 +100,7 @@ foodieApp.controller('mainController',function($scope) {  //Here we are using th
 	 cost: '2000',
 	 id: '5',
 	 hours: ' 5:30 PM to 11 PM (Mon-Sun)',
-	 image: 'https://b.zmtcdn.com/data/reviews_photos/31b/7a8d83e736afc793ead8b7695c67931b_1484535893.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+	 image: 'https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952__340.jpg'
 	 }]
 
 })
@@ -133,7 +133,7 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
  name: 'Corn Pizza',
  image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
 					 },
-	image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg'
+	image: 'https://cdn.pixabay.com/photo/2015/04/10/00/41/food-715542__340.jpg'
 },
 {
 name: 'Food Night Riders',
@@ -148,7 +148,7 @@ bestDish: {
 name: 'kathi roll',
 image: 'https://thumb7.shutterstock.com/display_pic_with_logo/2435534/342594524/stock-photo-dosa-south-indian-meal-close-up-side-view-selective-focus-342594524.jpg'
 				 },
-image: 'https://b.zmtcdn.com/data/pictures/chains/7/18366927/0d9a66ae0621be1ce7ed76c127108f4c.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
+image: 'https://cdn.pixabay.com/photo/2016/03/05/19/58/appetite-1238569__340.jpg'
 },
 {
 	name: 'Baskin Robbins',
@@ -159,7 +159,7 @@ image: 'https://b.zmtcdn.com/data/pictures/chains/7/18366927/0d9a66ae0621be1ce7e
 	cuisines: 'Ice Cream, Desserts',
 	cost: '500',
 	hours: '11 AM to 11 PM (Mon-Sun)',
-	image: 'https://b.zmtcdn.com/data/pictures/chains/0/120020/c3986c88bfd52bcda9c224f7806a4c9f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+	image: 'https://cdn.pixabay.com/photo/2017/03/03/19/28/eat-2114779__340.jpg'
 },
 {
 name: 'Midnight Chef',
@@ -174,7 +174,7 @@ bestDish: {
 name: 'Dal Makhani',
 image: 'https://b.zmtcdn.com/data/reviews_photos/a75/8f1582cb88ab703c1b25461a60ff6a75_1481161260.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 				 },
-image: 'https://b.zmtcdn.com/data/pictures/chains/4/122064/4ac36c34c219e976491b3fc2b10cd7e8.jpg?fit=around%7C80%3A80&crop=80%3A80%3B%2A%2C%2A'
+image: 'https://cdn.pixabay.com/photo/2016/11/18/22/21/architecture-1837150__340.jpg'
 },
 {
 name: 'Chokhi Dhani',
