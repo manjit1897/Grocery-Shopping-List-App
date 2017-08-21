@@ -25,10 +25,10 @@ foodieApp.config(function ($routeProvider) {   // .config() is a function that a
 		templateUrl: 'pages/restaurant.html',
 		controller: 'restaurantController'
 	})
-	.when('/groceryList',{
+	/*.when('/groceryList',{
 		templateUrl: 'pages/groceryList.html',
 		controller: 'groceryListController'
-	})
+	})*/
 })
 
 foodieApp.controller('mainController',function($scope) {  //Here we are using the object variable(foodieApp) that angular gave us to create a controller
@@ -128,6 +128,7 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	vote: '4.2',
 	cuisines: 'Modern Indian',
 	cost: '2200',
+	id: '1',
 	hours: '12 Noon to 1 AM (Mon-Sun)',
 	bestDish: {
  name: 'Corn Pizza',
@@ -143,6 +144,7 @@ category: 'North Indian, Mughlai, Chinese, Continental',
 vote: '3.4',
 cuisines: 'Modern Indian',
 cost: '700',
+id: '2',
 hours: ' 7 PM to 4 AM (Mon-Sun)',
 bestDish: {
 name: 'kathi roll',
@@ -158,6 +160,7 @@ image: 'https://cdn.pixabay.com/photo/2016/03/05/19/58/appetite-1238569__340.jpg
 	vote: '3.4',
 	cuisines: 'Ice Cream, Desserts',
 	cost: '500',
+	id: '3',
 	hours: '11 AM to 11 PM (Mon-Sun)',
 	image: 'https://cdn.pixabay.com/photo/2017/03/03/19/28/eat-2114779__340.jpg'
 },
@@ -169,6 +172,7 @@ category: 'Casual Dining, Bar',
 vote: '4.2',
 cuisines: 'North Indian, Chinese, Continental, Italian, Burger, Rolls, Salad',
 cost: '2200',
+id: '4',
 hours: ' 7 PM to 4 AM (Mon-Sun)',
 bestDish: {
 name: 'Dal Makhani',
@@ -184,6 +188,7 @@ category: 'Casual Dining',
 vote: '4.2',
 cuisines: 'Rajasthani',
 cost: '2000',
+id: '5',
 hours: ' 5:30 PM to 11 PM (Mon-Sun)',
 bestDish: {
 name: 'Rajasthani Thali',
@@ -193,8 +198,17 @@ image: 'https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952__340.jp
 }]
 
 $scope.restaurant = restaurants[$routeParams.id - 1];
+
+
 $scope.ingredients = [];   //initializing the variable as an empty array
 $scope.getIngredients = function(url) {
+/*	$("#show").click(function(){
+        $("p").show();
+    });*/
+		/*$("#playlist").append(
+	        "<li class='list-group-item'>" + val.singer + " - " + val.songName
+	      );
+   */
 	var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
 	$http({
 		'method': 'POST',
@@ -215,11 +229,80 @@ $scope.getIngredients = function(url) {
         	console.log(xhr);
         })
 	}
+
+
+
 	$scope.removeItem = function (x) {
         $scope.errortext = "";
         $scope.ingredients.splice(x, 1);
     }
-})
-foodieApp.controller('groceryListController', function($scope) {
 
 })
+
+/*foodieApp.controller('groceryListController', function($scope,$routeParams,$http) {
+  $scope.restaurantId = $routeParams.id;
+
+	var restaurants= [{
+	bestDish: {
+ name: 'Corn Pizza',
+ image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+					 }
+},
+{
+bestDish: {
+name: 'kathi roll',
+image: 'https://thumb7.shutterstock.com/display_pic_with_logo/2435534/342594524/stock-photo-dosa-south-indian-meal-close-up-side-view-selective-focus-342594524.jpg'
+				 }
+},
+{
+	name: 'Baskin Robbins',
+	address: 'Booth 324 & 325, Phase 5, Mohali',
+	location: 'Phase 5, Mohali',
+	category: 'Dessert Parlor',
+	vote: '3.4',
+	cuisines: 'Ice Cream, Desserts',
+	cost: '500',
+	id: '3',
+	hours: '11 AM to 11 PM (Mon-Sun)',
+	image: 'https://cdn.pixabay.com/photo/2017/03/03/19/28/eat-2114779__340.jpg'
+},
+{
+image: 'https://b.zmtcdn.com/data/reviews_photos/a75/8f1582cb88ab703c1b25461a60ff6a75_1481161260.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+				 }
+},
+{
+bestDish: {
+name: 'Rajasthani Thali',
+image: 'https://b.zmtcdn.com/data/reviews_photos/dc4/fe3f2f52e7c4b315151c375e07bfedc4_1476118137.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+				 }
+}]
+	$scope.restaurant = restaurants[$routeParams.id - 1];
+	$scope.ingredients = [];   //initializing the variable as an empty array
+	$scope.getIngredients = function(url) {
+		var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
+		$http({
+			'method': 'POST',
+			'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
+			'headers': {
+				          'Authorization': 'Key f29f0c7fa52a4cd1ac82d3cd6e0e5058',
+				           'Content-Type': 'application/json'
+			          },
+			'data': data
+		}).then(function (response)
+		   {
+	     		var ingredients = response.data.outputs[0].data.concepts;
+	        for (var i =0;i < ingredients.length;i++)  // running a loop through all the ingredients we got
+					 {
+	           $scope.ingredients.push(ingredients[i].name);    // pushing each value in the array
+	         }
+	    	}, function (xhr) {
+	        	console.log(xhr);
+	        })
+		}
+
+		$scope.removeItem = function (x) {
+	        $scope.errortext = "";
+	        $scope.ingredients.splice(x, 1);
+	    }
+})
+*/
